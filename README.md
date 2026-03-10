@@ -7,6 +7,8 @@ the status pages order :
 - Details : Current Profile Use > Current Item Holding > Current Progres State.
 - State : IsHasBoss = (Showing Boss) else if IsHasInvasion = (Showing Invasion) Else Current Location Biome.
 
+NOTE : I added calamity Biomes too if the players has calamitymod in it :D.
+
 # ⚠ Warning ⚠
 I didnt continue the project because mostly likely not interest again :3, Maybe sometimes but i dunno.
 

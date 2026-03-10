@@ -12,7 +12,9 @@ Example Text :
 - "State : Fighting MoonLord (1/3)"
 
 Example Image :
+
 <img width="442" height="158" alt="Screenshot 2026-03-10 130826" src="https://github.com/user-attachments/assets/c6ba90b8-ad83-4dd1-a803-a67a229ec780" />
+
 
 NOTE : 
 - I added calamity Biomes too if the players has calamitymod in it :D.

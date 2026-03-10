@@ -1,0 +1,10 @@
+Configs: {
+	PresenceConfig: {
+		DisplayName: Presence Config
+
+		Testing: {
+			Label: Testing Config (Do Not Touch it :3)
+			Tooltip: Just debugging conifg hehe
+		}
+	}
+}

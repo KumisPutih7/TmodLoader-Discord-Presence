@@ -1,0 +1,5 @@
+displayName = Discord Rich Presence
+author = Kregz/Kumis_Putih
+version = 0.1
+dllReferences = DiscordRPC
+weakReferences = CalamityMod

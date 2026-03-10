@@ -12,4 +12,6 @@ NOTE : I added calamity Biomes too if the players has calamitymod in it :D.
 # ⚠ Warning ⚠
 I didnt continue the project because mostly likely not interest again :3, Maybe sometimes but i dunno.
 
-If you want to install the project you need to have install nuget for Discord C# rich presence in your project.
+If you want to install the project you need to have install nuget for Discord C# rich presence in your project and calamityMod too.
+
+if you need help create an issues or pull request.

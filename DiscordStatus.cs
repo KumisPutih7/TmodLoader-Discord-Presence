@@ -21,7 +21,7 @@ namespace DiscordStatus
         public static string State = ""; // current Biome
         public static string[] DAssets = { "https://forums.terraria.org/index.php?attachments/icon-png.280655/", "Terraria", "https://forums.terraria.org/index.php?attachments/icon-png.280655/" };
         public static string[] DButtons = { "Chat", "https://kaout.my.id" };
-
+		// Btw the buttons didnt show up idk why so ill just use as placeholder
         // D means Discord, its like D = Discord Assets, why? because it can override the assets mods variable :D
 
         public override void Load()
@@ -79,3 +79,4 @@ namespace DiscordStatus
         }
     }
 }
+

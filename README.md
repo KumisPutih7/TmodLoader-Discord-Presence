@@ -5,9 +5,16 @@ My DRPC is using page, it has 3 pages in details currently and current boss page
 
 the status pages order :
 - Details : Current Profile Use > Current Item Holding > Current Progres State.
-- State : IsHasBoss = (Showing Boss) else if IsHasInvasion = (Showing Invasion) Else Current Location Biome.
+- State : IsHasBoss = (Showing Bosses "State : BossPage/MaxBossShow") else if IsHasInvasion = (Showing Invasion) Else Current Location Biome.
 
-NOTE : I added calamity Biomes too if the players has calamitymod in it :D.
+Example Text :
+- "Current Proggress : Post-HardMode/Pre-MoonLord"
+- "State : Fighting MoonLord (1/3)"
+
+NOTE : 
+- I added calamity Biomes too if the players has calamitymod in it :D.
+- Because the bosses is detect by using all npc if the bosses has 2 npc so it contains as 2 bosses
+- My english is bad, pls pull a request if i said wrong.
 
 # ⚠ Warning ⚠
 I didnt continue the project because mostly likely not interest again :3, Maybe sometimes but i dunno.

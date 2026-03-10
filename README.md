@@ -19,6 +19,7 @@ Example Image :
 NOTE : 
 - I added calamity Biomes too if the players has calamitymod in it :D.
 - Because the bosses is detect by using all npc if the bosses has 2 npc so it contains as 2 bosses
+- btw i dont have terraria, i just using my friends library (family sharing) thats why i upload it here.
 - My english is bad, pls pull a request if i said wrong.
 
 # ⚠ Warning ⚠

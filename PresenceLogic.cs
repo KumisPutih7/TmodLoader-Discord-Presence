@@ -25,6 +25,7 @@ namespace DiscordStatus
         public static List<string> CurrentBoss = new List<string>();
         public static string CurrentProgresState = "pre-harmode";
         public static string CurrentEvent = "";
+        public static string CurrentWeather = "Clear";
         public static int CurrentPillars = 0;
         public static string[] CurrentBossDefeated = {};
         int StatusPage = 0;
@@ -56,9 +57,8 @@ namespace DiscordStatus
                         {
                             DiscordStatus.State = "State : Fighting " + CurrentBoss[BossPage] + " (" + BossPage +"/" + CurrentBoss.Count +")";
                         }
-                        else if (CurrentEvent != "")
+                        else if (Main.invasionType > 0)
                         {
-                            if (Main.invasionType == 0) { CurrentEvent = ""; }
                             DiscordStatus.State = "State : " + CurrentEvent + " Event";
                         }
                         else
@@ -113,7 +113,7 @@ namespace DiscordStatus
             DiscordStatus.UpdatePresence();
         }
 
-
+        [JITWhenModsEnabled("CalamityMod")]
         private static string CalamityBiomeChecker()
         {
             if (p.Calamity().ZoneAbyssLayer4)
@@ -235,6 +235,36 @@ namespace DiscordStatus
             return VanillaBiomeChecker();
         }
 
+        [JITWhenModsEnabled("CalamityMod")]
+        private static string CalamityBossChecker()
+        {
+            if (CalamityMod.DownedBossSystem.downedCalamitas)
+            {
+                return "Post-SupremeCalamitas";
+            }
+            else if (CalamityMod.DownedBossSystem.downedYharon)
+            {
+                return "Post-Yharon/Pre-SupremeCalamitas";
+            }
+            else if (CalamityMod.DownedBossSystem.downedDoG)
+            {
+                return "Post-DevourOfGods/Pre-Yharon";
+            }
+            else if (CalamityMod.DownedBossSystem.downedPolterghast)
+            {
+                return "Post-Polterghast/Pre-DevourOfGods";
+            }
+            else if (CalamityMod.DownedBossSystem.downedProvidence)
+            {
+                return  "Post-Providence/PrePolterghast";
+            }
+            else if (NPC.downedMoonlord && !CalamityMod.DownedBossSystem.downedProvidence)
+            {
+                return "Post-MoonLoard/Pre-Providence";
+            }
+            return "";
+        }
+
         private static void UpdateInfoRPC()
         {
             CurrentPlayerUse = Main.LocalPlayer.name;
@@ -252,22 +282,35 @@ namespace DiscordStatus
                 CurrentItemHold = "Hand";
             }
 
-            if (Main.invasionType != 0)
+            switch (Main.invasionType)
             {
-                switch (Main.invasionType)
-                {
-                    case 1: CurrentEvent = "Goblin Army"; break;
-                    case 2: CurrentEvent = "Frost Legion"; break;
-                    case 3: CurrentEvent = "Pirate Invasion"; break;
-                    case 4: CurrentEvent = "Martian Madness"; break;
-                    default: CurrentEvent = "Invasion"; break;
-                }
+                case 1: CurrentEvent = "Goblin Army"; break;
+                case 2: CurrentEvent = "Frost Legion"; break;
+                case 3: CurrentEvent = "Pirate Invasion"; break;
+                case 4: CurrentEvent = "Martian Madness"; break;
             }
 
-            if (p.ZoneTowerSolar) CurrentPillars++;
-            if (p.ZoneTowerVortex) CurrentPillars++;
-            if (p.ZoneTowerNebula) CurrentPillars++;
-            if (p.ZoneTowerStardust) CurrentPillars++;
+            if (Main.bloodMoon)
+            {
+                CurrentEvent = "Blood Moon";
+            }
+            else if (Main.eclipse)
+            {
+                CurrentEvent = "Solar Eclipse";
+            }
+            else if (Main.slimeRain)
+            {
+                CurrentEvent = "Slime Rain";
+            }
+            else if (Main.snowMoon)
+            {
+                CurrentEvent = "Frost Moon";
+            }
+            else if (Main.pumpkinMoon)
+            {
+                CurrentEvent = "Pumpkin Moon";
+            }
+
 
             CurrentBoss.Clear();
 
@@ -286,9 +329,13 @@ namespace DiscordStatus
             {
                 CurrentProgresState = "Post-MoonLord";
             }
+            else if (NPC.downedPlantBoss)
+            {
+                CurrentProgresState = "Post-Plantera/Pre-MoonLord";
+            }
             else if (Main.hardMode)
             {
-                CurrentProgresState = "Post-HardMode/Pre-MoonLord";
+                CurrentProgresState = "Post-HardMode/Pre-Plantera";
             }
             else
             {
@@ -297,31 +344,7 @@ namespace DiscordStatus
 
             if (ModLoader.HasMod("CalamityMod"))
             {
-
-                if (CalamityMod.DownedBossSystem.downedCalamitas)
-                {
-                    CurrentProgresState = "Post-SupremeCalamitas";
-                }
-                else if (CalamityMod.DownedBossSystem.downedYharon)
-                {
-                    CurrentProgresState = "Post-Yharon/Pre-SupremeCalamitas";
-                }
-                else if (CalamityMod.DownedBossSystem.downedDoG)
-                {
-                    CurrentProgresState = "Post-DevourOfGods/Pre-Yharon";
-                }
-                else if (CalamityMod.DownedBossSystem.downedPolterghast)
-                {
-                    CurrentProgresState = "Post-Polterghast/Pre-DevourOfGods";
-                }
-                else if (CalamityMod.DownedBossSystem.downedProvidence)
-                {
-                    CurrentProgresState = "Post-Providence/PrePolterghast";
-                }
-                else if (NPC.downedMoonlord && !CalamityMod.DownedBossSystem.downedProvidence)
-                {
-                    CurrentProgresState = "Pre-Providence";
-                }
+                CurrentProgresState = CalamityBossChecker();
             }
         }
     }

@@ -25,7 +25,8 @@ NOTE :
 - https://github.com/Lachee/discord-rpc-csharp
 - CalamityMod From Workshop(doesnt install if you dont want to.)
 
-Credit : All external libraries and game assets (e.g., DiscordRPC by Lachee, Calamity Mod, and Terraria) are the intellectual property of their original creators. No copyright infringement is intended.
+# Credit
+All external libraries and game assets (e.g., DiscordRPC by Lachee, Calamity Mod, and Terraria) are the intellectual property of their original creators. No copyright infringement is intended.
 
 # ⚠ Warning ⚠
 I didnt continue the project because mostly likely not interest again :3, Maybe sometimes but i dunno.

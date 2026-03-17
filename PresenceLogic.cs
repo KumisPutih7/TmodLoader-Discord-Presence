@@ -15,6 +15,12 @@ using System.Security.Policy;
 using CalamityMod.Items.Accessories;
 // just a joke presence logic is like re-logic :D
 
+
+//NOTE if you had An Error from CalamityMod Just ignore and run as normaly because of visual studio see the reference of calamity mod is missing so it error
+//but it run normally even if you ignore and dosent use calamity mod for your project or anything.
+// i just dont know how to fix that :) so i added note
+
+
 namespace DiscordStatus
 {
     internal class PresenceLogic : ModSystem

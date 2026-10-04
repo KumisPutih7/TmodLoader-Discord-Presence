@@ -69,7 +69,7 @@ namespace DiscordStatus
             // Details: All stuff about the current world (e.g. difficulty, corruption/crimson, etc.)
             // State: Current Biome
             // Assets : All images of biomes and other stuff
-            // Buttons : to show ip in the terraria just in case if the player is hosting a multiplayer world, You can disable it in the config 
+            // Buttons : to show ip in the terraria just in case if the player is hosting a multiplayer world, You can disable it in the config (UNUSED BTW/WIP)
         }
 
         public override void Unload()

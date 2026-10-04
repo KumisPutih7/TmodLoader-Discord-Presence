@@ -28,8 +28,8 @@ namespace DiscordStatus
         {
             base.Load();
             if (Main.dedServ) return;
-            //424087019149328395 -- change to my own app id
-            client = new DiscordRpcClient("1479607747820388453");
+            //12345678910 -- change to your app id
+            client = new DiscordRpcClient("");
             client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
             client.Initialize();
             client.OnReady += (sender, e) =>
